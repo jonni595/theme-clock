@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:300&display=swap");
 /* Boilerplate */
 *,
 *::before,
@@ -16,7 +17,89 @@ body {
   min-height: 100vh;
   background-color: #242424;
   color: #f0f0f0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Heebo", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.container__clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+.container__clock .needle {
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 65px;
+  transform-origin: bottom center;
+  transition: all 0.5s ease-in;
+}
+.container__clock .needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+.container__clock .needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+}
+.container__clock .needle.second {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+  background-color: #e74c3c;
+}
+.container__clock .center-point {
+  background-color: #e74c3c;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.container__clock .center-point::after {
+  content: "";
+  background-color: var(--primary-color);
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.container__time {
+  font-size: 60px;
+}
+.container__date {
+  color: #aaa;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+.container__date .circle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 18px;
+  transition: all 0.5s ease-in;
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */

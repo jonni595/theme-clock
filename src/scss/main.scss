@@ -1,20 +1,81 @@
-/* Boilerplate */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@forward "global";
+@use "./utils" as u;
 
-html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-}
+.container {
+  @include u.flex(column, center, space-between);
 
-body {
-  min-height: 100vh;
-  background-color: #242424;
-  color: #f0f0f0;
-  font-family: "Roboto", sans-serif;
+  &__clock {
+    position: relative;
+    @include u.size(200px, 200px);
+
+    .needle {
+      background-color: var(--primary-color);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include u.size(3px, 65px);
+      transform-origin: bottom center;
+      transition: all 0.5s ease-in;
+
+      &.hour {
+        transform: translate(-50%, -100%) rotate(0deg);
+      }
+
+      &.minute {
+        transform: translate(-50%, -100%) rotate(0deg);
+        height: 100px;
+      }
+
+      &.second {
+        transform: translate(-50%, -100%) rotate(0deg);
+        height: 100px;
+        background-color: u.$bg-seconds;
+      }
+    }
+
+    .center-point {
+      background-color: u.$bg-seconds;
+      @include u.size(10px, 10px);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+
+      &::after {
+        content: "";
+        background-color: var(--primary-color);
+        @include u.size(5px, 5px);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__time {
+    font-size: 60px;
+  }
+
+  &__date {
+    color: u.$date-color;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+
+    .circle {
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      border-radius: 50%;
+      @include u.size(18px, 18px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 18px;
+      transition: all 0.5s ease-in;
+      font-size: 12px;
+    }
+  }
 }
