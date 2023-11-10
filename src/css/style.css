@@ -38,6 +38,10 @@ body {
   justify-content: flex-start;
   flex-direction: row;
 }
+.container__time .format {
+  font-weight: 600;
+  margin-left: 15px;
+}
 .container__date {
   color: #aaa;
   font-size: 14px;
@@ -45,8 +49,8 @@ body {
   text-transform: uppercase;
 }
 .container__date .circle {
-  background-color: #f0f0f0;
-  color: #242424;
+  background-color: #872341;
+  color: #f0f0f0;
   border-radius: 50%;
   height: 18px;
   width: 18px;
@@ -63,6 +67,7 @@ body {
   background-color: #f0f0f0;
   color: #242424;
   font-family: inherit;
+  font-weight: 600;
   border: 0;
   border-radius: 4px;
   padding: 8px 12px;
@@ -75,7 +80,12 @@ body {
 
 .light {
   color: #212121;
-  background: #000;
+  background: #fffbf5;
+}
+
+.dark {
+  color: #efe1d1;
+  background: #242424;
 }
 
 /*# sourceMappingURL=style.css.map */

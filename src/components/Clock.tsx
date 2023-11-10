@@ -10,7 +10,7 @@ const Clock: React.FC<ClockProps> = ({ hour, day, format, date }) => {
     <>
       <div className="container__time">
         <h1>{hour}</h1>
-        <span>{format}</span>
+        <span className="format">{format}</span>
       </div>
       <div className="container__date">
         <span>{date}</span>
