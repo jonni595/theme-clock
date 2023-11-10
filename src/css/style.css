@@ -31,56 +31,12 @@ body {
   justify-content: space-between;
   flex-direction: column;
 }
-.container__clock {
-  position: relative;
-  width: 200px;
-  height: 200px;
-}
-.container__clock .needle {
-  background-color: var(--primary-color);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 3px;
-  height: 65px;
-  transform-origin: bottom center;
-  transition: all 0.5s ease-in;
-}
-.container__clock .needle.hour {
-  transform: translate(-50%, -100%) rotate(0deg);
-}
-.container__clock .needle.minute {
-  transform: translate(-50%, -100%) rotate(0deg);
-  height: 100px;
-}
-.container__clock .needle.second {
-  transform: translate(-50%, -100%) rotate(0deg);
-  height: 100px;
-  background-color: #e74c3c;
-}
-.container__clock .center-point {
-  background-color: #e74c3c;
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-}
-.container__clock .center-point::after {
-  content: "";
-  background-color: var(--primary-color);
-  width: 5px;
-  height: 5px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-}
 .container__time {
   font-size: 60px;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  flex-direction: row;
 }
 .container__date {
   color: #aaa;
@@ -89,17 +45,37 @@ body {
   text-transform: uppercase;
 }
 .container__date .circle {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  background-color: #f0f0f0;
+  color: #242424;
   border-radius: 50%;
-  width: 18px;
   height: 18px;
+  width: 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   line-height: 18px;
   transition: all 0.5s ease-in;
   font-size: 12px;
+  margin-left: 5px;
+}
+.container .toggle {
+  cursor: pointer;
+  background-color: #f0f0f0;
+  color: #242424;
+  font-family: inherit;
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 100px;
+}
+.container .toggle:focus {
+  outline: none;
+}
+
+.light {
+  color: #212121;
+  background: #000;
 }
 
 /*# sourceMappingURL=style.css.map */

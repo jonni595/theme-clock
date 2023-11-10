@@ -1,8 +1,10 @@
+import ThemeClock from "./components/ThemeClock";
+
 const App = () => {
   return (
-    <div>
-      <h1>React</h1>
-    </div>
+    <>
+      <ThemeClock />
+    </>
   );
 };
 

@@ -4,59 +4,9 @@
 .container {
   @include u.flex(column, center, space-between);
 
-  &__clock {
-    position: relative;
-    @include u.size(200px, 200px);
-
-    .needle {
-      background-color: var(--primary-color);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      @include u.size(3px, 65px);
-      transform-origin: bottom center;
-      transition: all 0.5s ease-in;
-
-      &.hour {
-        transform: translate(-50%, -100%) rotate(0deg);
-      }
-
-      &.minute {
-        transform: translate(-50%, -100%) rotate(0deg);
-        height: 100px;
-      }
-
-      &.second {
-        transform: translate(-50%, -100%) rotate(0deg);
-        height: 100px;
-        background-color: u.$bg-seconds;
-      }
-    }
-
-    .center-point {
-      background-color: u.$bg-seconds;
-      @include u.size(10px, 10px);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-
-      &::after {
-        content: "";
-        background-color: var(--primary-color);
-        @include u.size(5px, 5px);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-      }
-    }
-  }
-
   &__time {
     font-size: 60px;
+    @include u.flex(row, baseline, flex-start);
   }
 
   &__date {
@@ -66,16 +16,39 @@
     text-transform: uppercase;
 
     .circle {
-      background-color: var(--primary-color);
-      color: var(--secondary-color);
+      background-color: u.$secondary;
+      color: u.$primary;
       border-radius: 50%;
-      @include u.size(18px, 18px);
+      height: 18px;
+      width: 18px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       line-height: 18px;
       transition: all 0.5s ease-in;
       font-size: 12px;
+      margin-left: 5px;
     }
   }
+
+  .toggle {
+    cursor: pointer;
+    background-color: u.$secondary;
+    color: u.$primary;
+    font-family: inherit;
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 100px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.light {
+  color: u.$light-text;
+  background: #000;
 }
