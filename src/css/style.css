@@ -28,8 +28,11 @@ body {
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  transition: all 0.3s ease-in;
 }
 .container__time {
   font-size: 60px;
@@ -52,8 +55,8 @@ body {
   background-color: #872341;
   color: #f0f0f0;
   border-radius: 50%;
-  height: 18px;
-  width: 18px;
+  width: 20px;
+  height: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -64,18 +67,18 @@ body {
 }
 .container .toggle {
   cursor: pointer;
-  background-color: #f0f0f0;
-  color: #242424;
   font-family: inherit;
   font-weight: 600;
   border: 0;
   border-radius: 4px;
   padding: 8px 12px;
-  position: absolute;
-  top: 100px;
+  text-transform: capitalize;
 }
 .container .toggle:focus {
   outline: none;
+}
+.container .toggle .icon {
+  margin-left: 5px;
 }
 
 .light {
