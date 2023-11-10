@@ -7,6 +7,11 @@
   &__time {
     font-size: 60px;
     @include u.flex(row, baseline, flex-start);
+
+    .format {
+      font-weight: 600;
+      margin-left: 15px;
+    }
   }
 
   &__date {
@@ -16,8 +21,8 @@
     text-transform: uppercase;
 
     .circle {
-      background-color: u.$secondary;
-      color: u.$primary;
+      background-color: u.$badge;
+      color: u.$secondary;
       border-radius: 50%;
       height: 18px;
       width: 18px;
@@ -36,6 +41,7 @@
     background-color: u.$secondary;
     color: u.$primary;
     font-family: inherit;
+    font-weight: 600;
     border: 0;
     border-radius: 4px;
     padding: 8px 12px;
@@ -50,5 +56,10 @@
 
 .light {
   color: u.$light-text;
-  background: #000;
+  background: u.$bg-light;
+}
+
+.dark {
+  color: u.$dark-text;
+  background: u.$bg-dark;
 }
