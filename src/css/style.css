@@ -41,6 +41,11 @@ body {
   justify-content: flex-start;
   flex-direction: row;
 }
+@media (width < 600px) {
+  .container__time {
+    font-size: 40px;
+  }
+}
 .container__time .format {
   font-weight: 600;
   margin-left: 15px;

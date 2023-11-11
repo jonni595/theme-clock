@@ -10,6 +10,10 @@
     font-size: 60px;
     @include u.flex(row, baseline, flex-start);
 
+    @media (width < 600px) {
+      font-size: 40px;
+    }
+
     .format {
       font-weight: 600;
       margin-left: 15px;
