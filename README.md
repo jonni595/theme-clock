@@ -5,6 +5,7 @@
 ## Installation
 
 - `pnpm i` or `npm i`
+- `pnpm vite` or `npm run dev`
 
 This project is a clock implemented using the following technologies:
 
